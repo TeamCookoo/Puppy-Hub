@@ -52,5 +52,5 @@ boton3.MouseButton1Click:Connect(function()
     print("SOLO ES PRUEBA")
 
 boton4.MouseButton1Click:Connect(function()
-  print(1+1)
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/TeamCookoo/Puppy-Hub/refs/heads/main/SSA.lua"))()
 end)
