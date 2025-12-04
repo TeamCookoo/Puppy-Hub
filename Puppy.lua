@@ -34,7 +34,7 @@ end
 -- Botones
 local boton1 = crearBoton("Inf Yield", 40)
 local boton2 = crearBoton("Steal a Brainrot", 90)
-local boton3 = crearBoton("esto solo es prueba", 140)
+local boton3 = crearBoton("99 Nights", 140)
 local boton4 = crearBoton("SSA Universal Script", 190)
 
 -- Funciones de los botones
