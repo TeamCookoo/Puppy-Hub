@@ -1,4 +1,4 @@
 @TeamCookoo Presents
-<h1>Puppy Hub</h1> The Best Keyless Script Ever.
+<h1>Puppy Hub</h1> Lite Script for Your Potato and You
 
 ---
