@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Puppy Hub Key System</title>
+<style>
+body {
+    background: #0d0d0d;
+    color: #ffffff;
+    font-family: Arial;
+    padding-top: 80px;
+    text-align: center;
+}
+.box {
+    background: #1a1a1a;
+    padding: 25px;
+    width: 420px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.key {
+    margin-top: 10px;
+    padding: 15px;
+    background: #222;
+    font-size: 20px;
+    border-radius: 10px;
+    word-break: break-all;
+}
+</style>
+</head>
+<body>
+
+<h1>Puppy Hub Key System</h1>
+<div class="box">
+    <p>🔑 Copia esta key. Dura 1 hora.</p>
+    <div id="key" class="key">Generando...</div>
+</div>
+
+<script>
+async function generarKey() {
+    const hora = Math.floor(Date.now() / 3600000);
+    const base = "PuppyHub-" + hora;
+
+    const buffer = new TextEncoder().encode(base);
+    const hash = await crypto.subtle.digest("SHA-256", buffer);
+
+    let hex = Array.from(new Uint8Array(hash))
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
+
+    document.getElementById("key").textContent = hex.substring(0, 32);
+}
+
+generarKey();
+</script>
+
+</body>
+</html>
